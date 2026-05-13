@@ -790,18 +790,24 @@ section { padding: 110px 0; }
     </div>
     <div class="contact-grid">
       
-<form class="contact-form reveal" onsubmit="event.preventDefault(); alert('Form submission requires a backend service. For now, please email corp@osrmgroup.com directly.');">
+<form class="contact-form reveal" action="https://formsubmit.co/corp@osrmgroup.com" method="POST">
+  <input type="hidden" name="_subject" value="New Quote Request — OSRM Website" />
+  <input type="hidden" name="_template" value="table" />
+  <input type="hidden" name="_captcha" value="true" />
+  <input type="hidden" name="_autoresponse" value="Thank you for your interest in OSRM Tech Pack. We have received your enquiry and our sales team will respond within 1-2 business days." />
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
   <div class="form-row">
-    <div class="form-field"><label for="cf-name">Full Name</label><input id="cf-name" type="text" placeholder="Your name" required /></div>
-    <div class="form-field"><label for="cf-company">Company</label><input id="cf-company" type="text" placeholder="Company name" required /></div>
+    <div class="form-field"><label for="cf-name">Full Name</label><input id="cf-name" name="Full Name" type="text" placeholder="Your name" required /></div>
+    <div class="form-field"><label for="cf-company">Company</label><input id="cf-company" name="Company" type="text" placeholder="Company name" required /></div>
   </div>
   <div class="form-row">
-    <div class="form-field"><label for="cf-email">Email</label><input id="cf-email" type="email" placeholder="you@company.com" required /></div>
-    <div class="form-field"><label for="cf-country">Country</label><input id="cf-country" type="text" placeholder="Country" /></div>
+    <div class="form-field"><label for="cf-email">Email</label><input id="cf-email" name="Email" type="email" placeholder="you@company.com" required /></div>
+    <div class="form-field"><label for="cf-country">Country</label><input id="cf-country" name="Country" type="text" placeholder="Country" /></div>
   </div>
   <div class="form-row single">
     <div class="form-field"><label for="cf-product">Product of Interest</label>
-      <select id="cf-product">
+      <select id="cf-product" name="Product of Interest">
         <option>Ad*Star Block Bottom Valve Bags</option>
         <option>Ad*Star BOPP Bags &amp; Sacks</option>
         <option>Pillow Sacks</option>
@@ -814,7 +820,7 @@ section { padding: 110px 0; }
   </div>
   <div class="form-row single">
     <div class="form-field"><label for="cf-message">Tell us about your requirement</label>
-      <textarea id="cf-message" placeholder="Volume per month, specifications, GSM, print colours, delivery timeline..."></textarea>
+      <textarea id="cf-message" name="Message" placeholder="Volume per month, specifications, GSM, print colours, delivery timeline..."></textarea>
     </div>
   </div>
   <button type="submit" class="btn btn-primary">Send enquiry
